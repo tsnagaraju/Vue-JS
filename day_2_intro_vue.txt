@@ -1,0 +1,429 @@
+function Employee(id, name){}
+let e1 = new Employee(123, 'nagaraju')
+
+ES6:
+----
+- let, const
+- arrow functions
+- rest and spread operators
+- template literals
+- classes
+- promises
+- async/await
+- Modules
+- destructuring
+- default parameters
+
+
+Variables:
+----------
+- a literal is assigned to an identifier
+  x = 10
+  c.l(x)//10
+ 
+- untyped language
+- there are 3 ways to do this
+  using var
+  using let
+  using const  
+  
+Using var:
+----------
+- only the construct in js ES5 
+- is used to define variables
+  var x = 10;
+  x = 10; // 
+  
+  var x;
+  console.log(x) // undefined
+- scope of var key word is function scope
+- variable initialized with var outside of any
+  function is global scope
+- variable initialized with var inside a function
+  then scope is function scope
+
+- var does not have any block scope
+
+Using let:
+----------
+- introduced in ES6 (ES2015) 
+- scope of let keyword is block scope
+- it's scope is limited to block, statement or
+  expression
+  
+  let x = 10;
+
+Using const:
+------------
+- introduced in ES6
+- once const is initialized its can never be
+  changed
+  const PI = 3.17;
+- scope of this is a block scope  
+
+Arrow functions:
+-----------------
+- introduced in ES6 
+- we avoid using function in modern source code
+  
+  setTimeout(function() {
+    alert('hai')}, 2000)
+	
+  setTimeout(()=>{alert('hai')}, 2000)
+
+- if function body contains just a single statement
+  you can omit the brackets
+  
+- if you have one parameter then you can omit
+  parantheses
+
+- arrow functions allow you to have an implicit
+  return.
+- returning values without using return keyword
+
+Rest parameter:
+---------------
+- introduced in ES6
+- ...argName
+- rest always must be last parameter
+
+spread operator:
+----------------
+- concept of ES6
+- ...argName
+- spred operator for arrays
+let n1 = [2, 3, 4]
+let n2 = [5, 6, 7]
+let nums = [...n1, ...n2]
+console.log(nums)
+- spread operator for objects as well
+- let newObj = {...oldObj}
+- spread operator creates new array with ecah 
+  char in the string
+  let name = 'nagaraju'
+  let myName = [...name]
+  
+default parameters:
+--------------------
+- a parameter can be initialized with default 
+  values
+  ex: function display(msg="hai") {}
+  
+Destructuring:
+--------------
+let nums = [1, 2, 3, 4, 5]  
+let x = nums[0]
+let y = nums[1]
+let a = nums[2]
+let b = nums[3]
+let c = nums[4]
+
+let [x, y, a, b, c] = nums;
+
+let [x, y] = nums;
+
+let [x, y, ...a] = nums;
+
+Template Literals:
+------------------
+- introduced in ES6
+- offer a new way to declare strings 
+- use backticks not single or double quotes
+  let name = `nagaraju`
+  
+- features:
+  - we can define multiline strings
+  - to interpolate variables and expressoins in
+    strings
+
+Classes:
+--------
+- class is introduced in ES6
+- this points to current object (instance)
+- super points to parent object
+
+gettes and setters:
+--------------------
+- getters are accessors
+- setters are mutators
+- if you want define setters and getters then
+  add method prefix with get or set 
+
+summary:
+--------
+let, var, const
+arrow functions
+rest and spread
+default parameters
+template literals
+classes
+destructuring 
+
+
+Day - 2:
+--------
+Promises
+async/await
+Modules
+Introduction to Vue
+first vue app
+Promises:
+---------
+- promises are the way to deal with asynchronous
+  code in js
+- Fetch API uses Promises
+- return promise either in a resolved state or 
+  in a rejected state
+
+Creating promise:
+-----------------
+- using promise constructor
+- new Promise()
+- resolved state, rejected state
+- then(), catch() on promise object
+
+async/await:
+------------
+- introduced in ES7
+- reduce boilerplate code around promises
+
+Modules:
+--------
+- require('./hello')
+- node js using CommonJS 
+- export class A {}  // demo.js
+  or export default A
+  
+- hello.js:
+  import {A} from './demo.js' // export 
+  or
+  import A from './demo.js' // export default
+
+- expose functionality  to other js files
+
+Vue:
+----
+- Evan you
+- community
+
+- Vue is an open source JS framework created by
+  Evan You
+- progressive js framework 
+  approachable
+  versatile
+  performant
+
+Progressive:
+------------
+- cdn
+- cli
+
+Approachable:
+-------------
+- HTML, CSS and JS
+
+Versatile:
+-----------
+- vuex is used to manage state in our app
+- vue-router is used to have client side routing
+- vue-cli is used build vue web applications
+- vue-test-utils is used to testvue components
+
+Perfomant:
+----------
+- Virtual DOM
+First Vue App:
+-------------
+- create first vue app using cdn
+  <script src="https://unpkg.com/vue"></script>
+- we create Vue app by declaring vue instance 
+- vue instance is the hearth of the applicatoin
+- vue instance is created by declaring 
+  new Vue({})
+  
+  ex: new Vue({
+       // options
+      })
+- vue instance accepts options object 
+- options are template, data, methods, el
+  
+   new Vue ({
+     el: '#app'
+   })
+
+   <div id="app"></div>
+
+- Vue js is a user interface library focused 
+  view layer.
+  
+- Vue instance can return data within the view
+- this data can be declared using an option 
+  'data'  
+  
+Vue CLI:
+--------
+- CLI stands for Command Line Interface 
+- performs initial project setup and scaffolding
+- configurations done automatically 
+- downlaod and install node js 
+> node -v
+> npm -v
+> npm install -g @vue/cli
+- we can create new vue project using
+  > vue create <<project_name>>
+  ex: > vue create my-vue-app
+  
+- you can pick preset 
+  > npm run serve
+
+  
+  
+project folder structure:
+-------------------------
+public/index.html:
+- main app file  
+src/main.js:
+- entry point to our application
+src/App.vue
+- is a single file component 
+- it contains 3 chunks of code: html, css & js  
+  
+other commands are:
+-------------------
+build: to start a production
+lint: to run the linter
+
+Webpack:
+--------
+- is a module bundler
+- creates js bundle
+- runs babel 
+- providing development server
+- live watch mechanism
+
+- add a plugin Vetur to VSC to edit .vue files
+- add DevTool to any browser
+  install on Chrome
+  install on Firefox
+  install the standalone app
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+  
+  
+  
+   
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
