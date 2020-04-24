@@ -1,0 +1,222 @@
+Day - 3:
+--------
+- devtools
+- components
+- templates
+
+
+DevTool:
+--------
+- add extension to chrome or firefox
+- install standalone app
+- components tree which is the current panel
+  selected by default in DevTool
+- there are 4 panels
+  1. components  ex: $vm0
+  2. vuex
+  3. events
+  4. refresh
+  5. router
+  
+components:
+-----------
+- components are single, independent units
+- code reusability
+- render all our components
+- In vue, there are 4 ways to define vue components
+
+1) new Vue({})
+
+2)
+  Vue.component('component-name', {})
+  
+3)
+- creating a local component
+- not available to other components
+
+4) .vue called single file components
+
+
+- using  new Vue({}) or Vue.component('',{})
+- Vue.component('product-list', {})
+  <product-list/>
+  <ProductList/>
+  
+- kebab-case
+- Pascal Case
+
+  Vue.component('ProductList', {})
+  <product-list/>
+  
+Local Components:
+------------------
+const Person = {
+    template: '<p>this is local component</p>'
+}  
+
+new Vue({
+  components: {
+    Person
+  }
+})
+
+Global component:
+------------------
+- a component which is created using
+  Vue.component() is globally registered
+  
+Building blocks of a component:
+--------------------------------  
+el -> is used only in root components initialize
+      using new Vue({})  
+	  <div id="app"></div>
+	  el: "#app"
+data -> component local state
+template -> is responsible for defining the output
+methods -> the component methods
+computed -> computed properties
+watcher -> component watcher
+props -> component props
+  
+Single File Components:
+-----------------------
+- vue components can be declared in .js file
+	- Vue.component('', {})
+		or
+	  new Vue({})  
+	  
+- vue component can be declared in .vue file
+  is called single file components
+- .vue file allows us to define
+   - JS logic
+   - HTML code template
+   - CSS 
+- define them all in single file 
+- .vue files can not be used without webpack
+   setup
+- we are free to use modern web feature
+- preprocessors:
+  - Typescript
+  - SCSS
+  - SASS
+  - PUG
+- <style scoped> that won't leak css to other 
+  components
+- <style> becomes global
+- you can seperate js and write script in .js
+  <script src="demo.js"></script>
+- you can have seperate css file .css
+  <style src="demo.css"></style>
+- data() {
+    return {
+      name: "nagaraju setti"
+    };
+  }
+  or
+  
+  data: function() {
+    return {
+      name: "nagaraju setti"
+    };
+  }
+  
+  or
+  
+  data: () => {
+    return {
+      name: "nagaraju setti"
+    };
+  }
+ 
+new Vue({
+  data: {}
+})
+
+Templates:
+----------
+- new Vue({
+   template: '<p>hello</p>'
+  })
+- template in single file component is  
+- <template>
+   <p>hello</p>
+  </template>
+- vue js template providing two things:
+  interpolaton
+  directives
+- data binding can be done using interpolaton
+- {{ }}
+- you can use js expression inside your interpolaton
+- you are limited to use one expression 
+
+- devtool extension
+- component
+- ways to create component
+- single file component
+- template 
+Day - 4:
+========
+built in directives:
+--------------------
+- all directives starts with 'v-'
+v-for:
+-----
+- to iterate array from template
+  <li v-for="item in items">{{item}}</li>
+  
+v-bind:
+-------
+- binding property value to attribute
+  
+  <li v-for="(item, i) in items" v-bind:key="i">
+	{{item}}
+  </li> 
+
+- we have shorthand syntax for v-bind
+  <li v-for="(item, i) in items" :key="i">
+	{{item}}
+  </li>   
+  
+- <img :src="url"/>
+- <a :href="url"/>  or <a v-bind:href="url"/>
+
+v-html:
+-------
+v-text:
+-------
+v-once:
+-------
+v-model:
+--------
+- is used to do two way data binding
+v-if:
+-----
+v-else-if
+v-ele
+
+dropdown
+v-for
+v-model
+v-if, ele, else-if
+
+v-on:
+------
+- to handle events in Vue js
+  
+  <button v-on:click="function">click</button>
+  
+  shorthand syntax for v-on is:
+  <button @click="function">click</button>
+  
+v-show: to show or hide something
+
+<p v-show="flag">hello</p>  
+
+events:
+methods:
+
+
+custom directives:
+------------------
+- directives: {}
+
