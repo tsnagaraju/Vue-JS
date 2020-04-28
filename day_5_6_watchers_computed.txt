@@ -1,0 +1,215 @@
+Watcher:
+--------
+- allows to listen to the component data
+- run watcher on particular property changes
+- watcher can optionally accept 2 parameters
+  first parameter is new property value,
+  2nd parameter is old property value
+
+Computed Properties:
+--------------------
+- computed properties are used to handle complex
+  calculations
+  {{ count * 10 }}
+- computed: {}
+  {{ count() }}
+
+methods vs computed properties:
+-------------------------------
+- call methods on events vs to compute existing data
+- methods can have parameters vs computed properties
+  shouldn't have any parameters
+- this method is re-evaluated when we call it
+  vs cached based on their dependencies
+- can not be used as a property but can be used 
+  as a property
+
+when to use methods:
+--------------------
+- to react to some events happening in the DOM
+
+When to use computed properties:
+--------------------------------
+- to compose new data from existing data
+
+when to use watchers:
+---------------------
+- to listen when data property changes
+
+dynamic components:
+-------------------
+<component>
+</component>
+
+<keep-alive>
+
+styling using css
+slots
+filters
+mixins
+
+
+2 to 3:30
+
+4 to 5 pm
+
+
+
+
+styling component using css:
+----------------------------
+- simplest option to do styling using style
+  <p style="color: red">hello</p>
+
+- any property in quotes like backgroud-color
+- backgroudColor
+
+<div class="box"></div>
+
+
+
+
+
+props:
+------
+- props are used to pass data down from parent
+  to child component
+- used to component communication  
+- props are read only props
+- we can define props to accept data from parent component
+  
+  props: ['personName', 'age', ]
+  
+  {{ personName }} {{age}
+
+type of props:
+--------------
+- default type for data or props is any
+- props: {
+    contactName: String,
+	contactNumber: Number
+  }
+- child component can get data through its props
+valid types for a prop:
+-----------------------
+- String
+- Number
+- Object
+- Array
+- Boolean
+- Function
+- Date
+- Symbol
+
+set default prop value:
+------------------------
+- props: {
+   name: {
+     type: String,
+	 default: 'nagaraju'
+	 }
+  }
+  
+set prop to be a mandatory:
+----------------------------
+- props: {
+   name: {
+    type: String,
+    required: true
+	}
+  }	
+
+ProductList
+
+Product
+ 
+- we use props to pass data downwards and we 
+  custom events to pass data upwards
+- to pass data between two sibling component
+  we can't use custom events
+  
+  App.vue:
+  
+  <Component1/>
+  <Component2/>
+  
+- 3 ways 
+1. use event bus
+2. use a simple global store
+3. use library like vuex
+
+- EventBus is a vue instance that is used to 
+  enable isolated components to subscribe and 
+  publish custom events between one and another
+   
+- this.$root
+
+Slots:
+------
+- inject any component body
+- <slot></slot>
+fallback content:
+------------------
+Named Slot:
+------------
+scoped slot:
+------------
+
+Filters:
+--------
+filters: {}
+- we can use filter with operator called |
+  {{ 'nagaraju' | changeCase }}
+  
+Mixins:
+-------
+- mixins are a way storing reusable code  
+- export const productmixin = {
+   // do something
+  }
+
+Axios
+
+CRUD
+
+npm i -g json-server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
