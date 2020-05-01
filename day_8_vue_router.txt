@@ -1,0 +1,128 @@
+Axios 
+======
+- GET, POST, PUT and DELETE
+
+GET -> is read only method
+
+POST -> is write only 
+
+PUT -> is write only
+
+DELETE -> is write only
+
+Idempotent and Non-Idempotent:
+-------------------------------
+GET:
+----
+- GET http://localhost:3000/products - response
+  GET http://localhost:3000/products - response
+
+- PUT http://localhost:3000/products/2 
+   query okay, 1 row effected
+  PUT http://localhost:3000/products/2
+   query okay, 0 rows effected
+  PUT http://localhost:3000/products/2
+   query okay, 0 rows effected
+   
+- DELETE http://localhost:3000/products/2
+   query okay, 1 rows effected   
+  DELETE http://localhost:3000/products/2
+   query okay, 0 rows effected
+  DELETE http://localhost:3000/products/2
+   query okay, 0 rows effected
+
+- POST http://localhost:3000/products/
+   query okay, 1 row inserted
+  POST http://localhost:3000/products/
+   query okay, 1 row inserted
+  POST http://localhost:3000/products/
+   query okay, 1 row inserted
+
+- JSON-Server
+> npm i -g json-server
+
+> npm i --save axios
+> products.json
+> json-server producs.json
+
+
+btn-primary
+btn-success
+btn-info
+btn-warning
+btn-danger
+
+Routing & Navigation:
+---------------------
+> npm i --save vue-router
+
+- import VueRouter from 'vue-router'
+  import Vue from 'vue'
+  Vue.use(VueRouter)
+  
+  $router is router object
+  $route is current route object 
+  
+router:
+-------
+this.$router.push('/about')
+or
+this.$router.push({name: 'About'})
+this.$router.replace()  
+this.$router.go()
+
+home	about	contact
+  
+localhost:8081/about/hyderabad 
+
+path: '/about/:city'
+
+this.$route.params.city // hyderabad
+
+Defining routes:
+----------------
+router-link
+
+<router-link to="/home">Home</router-link>
+<router-link to="/about">About</router-link>
+<router-link to="/contact">Contact</router-link>
+
+http://localhost:8081/home
+http://localhost:8081/about/hyderabad
+http://localhost:8081/contact
+
+path, component
+
+const routes = [
+  {path: '/home', component: Home},
+  {path: '/about', component: About},
+  {path: '/contact', component: Contact}
+]
+
+const router = new VueRouter({
+					routes
+			  })
+			  
+new Vue({
+  router
+})  
+
+
+
+- router guards
+  beforeEach()
+  afterEach()
+
+- afterEach() is called after the navigation is 
+  confirmed
+
+CRUD operations:
+----------------
+- using axios
+- using router api
+- bootstrap css
+- json-server
+
+- Home -> GET, DELETE
+- Update -> PUT
+- Add -> POST
