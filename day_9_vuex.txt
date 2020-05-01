@@ -1,0 +1,148 @@
+how do we handle empty url
+handling invalid urls
+
+lifecycle hooks:
+----------------
+- created, mounted, updated, destroyed
+
+Created:
+--------
+- created() hook 
+- is called when an instance has been created 
+- is called before DOM mounted/rendered
+
+Mounted:
+--------
+- mounted() hook
+- after that instance component will be mounted
+- before rendered this function is called
+
+Updated:
+---------
+- update() hook
+- will be called when you made changes then 
+  template is re-rendered
+- behaves like watch property
+
+Destroyed:
+----------
+- destroyed() will be called when the component
+  removed from DOM
+  
+- before  lifecycle hooks:
+--------------------------
+- beforeCreate() is fired before instance is initialized
+- created() 
+
+- beforeMount() is fired when instance is available
+  and before inserting component into dom
+- mounted()
+
+- beforeUpdate() is fired before re-rendering our
+   component
+- updated()
+
+- beforeDestroy() is fired when the component
+  is about to be destroyed
+- destroyed()
+
+
+Vuex:
+------
+- Flux
+  - is a desgin pattern
+  - to manage state in application
+
+- vue was inspired by flux
+- it's not pure flux implementation
+
+Principles of Vuex:
+--------------------
+- view can have some actions
+- actions will be dispatched to the store
+- store recieves actions and updates state
+- updated state is pushed to the view
+
+> npm i --save vuex
+
+store/index.js:
+---------------
+import Vuex from 'vuex'
+import Vue from 'vue'
+
+Vue.use(Vuex)
+
+export const store = new Vuex.store({
+store properties
+})
+
+main.js:
+--------
+import {store} from './store/index.js'
+
+new Vue({
+router,
+store
+})
+
+this.$store 
+
+store properties:
+-----------------
+- there are 4 objects in vuex store
+  1. state
+  2. mutations
+  3. actions
+  4. getters
+State:
+------
+- state indicates how data is stored in vuex 
+  store
+- store can be accessed by any component in application\
+  
+  export default new Vuex.Store({
+    state: {
+	   name: 'nagaraju setti'
+    }
+  })	
+ 
+state helpers:
+---------------
+
+getters:
+--------
+- getters are used to access state from store
+- is an object where it can have getters and returns state
+- getters: {
+   getName(state) {}
+  }
+- getters has default access to the state
+getters helpers:
+----------------
+- to access getters directly from component we 
+  use helpers
+  mapGetter(["getName"])
+- here, no need to use store object to access
+  getters
+
+Mutations:
+----------
+- are used to modify the data in vuex store
+- is a function and modifies the state synchronously
+- must be invoked  by calling store.commit()
+
+Actions:
+--------
+- are used for making asynchronous changes
+- has access to context object 
+
+computed: {
+    name() {},
+    ...mapGetters(["getName", "getProducts"])
+  },
+  
+computed: {
+name(){},
+getName(){}
+getProducts(){}
+}
